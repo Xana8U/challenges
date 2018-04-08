@@ -1,50 +1,50 @@
+# Once upon a time a small little snek climbed up a tree
 import time
-import os
 
-object = "( ╰∪╯ )"
-empty = " " # len 12
 
-loopcount = 0
+floors = 20
+treesize = floors * 20
+loopcount = 1
 ret = 0
+tree = []
 
-def App():
-    global loopcount
-    global ret
-    visual = ""
-    if loopcount == 9:
-        ret = 1
-    elif loopcount == 0:
-        ret = 0
-    if loopcount < 9 and ret == 0:
-        visual = empty * loopcount + object
-        loopcount += 1
-    elif ret == 1:
-        loopcount -= 1
-        visual = empty * loopcount + object
-    return visual
+# for snek
+snekhed = "O"
+snekbodi = "#"
 
-while True:
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    print(App())
-    time.sleep(0.5)
-    os.system("cls")
+# loop break
+climbed = False
 
-# while True:
-#     if loopcount < 8:
-#         print(null*loopcount + object)
-#         loopcount += 1
-#         time.sleep(0.5)
+# empty = " " # len 12
+for i in range(treesize):
+    if loopcount == 1 or loopcount == 15:
+        tree.append("|")
+    if loopcount == 16:
+        tree.append("\n")
+        loopcount = 0
+    else:
+        tree.append(" ")
+    loopcount += 1
+
+def drawTree():
+    global tree
+    for a in tree:
+        draw = print(a, end="")
+    return str(draw)
+
+
+spaceit = 4
+loop2 = 0 # rowchange pause
+while climbed is not True:
+    replaced = treesize - spaceit - -36  # spacing on floors is 20 for 45 degrees
+    tree[replaced] = snekhed
+    print(drawTree())
+    time.sleep(0.2)
+    if replaced < 20:
+        print("You reached the top!")
+        climbed = True
+    print("\n" * 9)
+    tree[replaced] = snekbodi
+    spaceit += 14
+    loop2 += 1
 
