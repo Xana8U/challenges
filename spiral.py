@@ -1,4 +1,6 @@
 # Once upon a time a small little snek climbed up a tree
+# Doesn't work properly on sololearn
+# Scroll down on sololearn to see first few loops
 import time
 
 
@@ -34,9 +36,8 @@ def drawTree():
 
 
 spaceit = 4
-loop2 = 0 # rowchange pause
 while climbed is not True:
-    replaced = treesize - spaceit - -36  # spacing on floors is 20 for 45 degrees
+    replaced = treesize - spaceit - -36  # This is messed up xD
     tree[replaced] = snekhed
     print(drawTree())
     time.sleep(0.2)
@@ -46,5 +47,4 @@ while climbed is not True:
     print("\n" * 9)
     tree[replaced] = snekbodi
     spaceit += 14
-    loop2 += 1
 
