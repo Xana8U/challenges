@@ -12,7 +12,7 @@ bank3 = 0
 
 def randomizer():
     global bank1, bank2, bank3
-    distance = 6
+    distance = 2
     colorform = []
 
     if bank1 == 0:  # these check that distance from previous color won't be too high too high
