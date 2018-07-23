@@ -22,6 +22,6 @@ def scrabble(wordset):
     # sorts the dictionary and returns last element(highest)
     return score[sorted(score)[-1]]
 
-wordset = input("Input words. MAX 10 letters per word")
+wordset = input("Input words. MAX 10 letters per word").lower()
 wordset = set(wordset.split(" "))
 print(scrabble(wordset))
